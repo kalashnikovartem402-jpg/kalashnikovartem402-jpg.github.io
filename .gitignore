@@ -1,5 +1,6 @@
-*.png
 .netlify/
 .vercel/
 node_modules/
 *.log
+preview_*.png
+live_*.png
