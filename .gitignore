@@ -1,0 +1,5 @@
+*.png
+.netlify/
+.vercel/
+node_modules/
+*.log

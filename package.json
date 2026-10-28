@@ -1,0 +1,12 @@
+{
+  "name": "optikayug-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Официальный сайт салона оптики «Оптика Юг»",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.13"
+  }
+}
