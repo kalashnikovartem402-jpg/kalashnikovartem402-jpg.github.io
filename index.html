@@ -10,7 +10,7 @@
   <link rel="icon" href="./images/photo_2024-04-24_15-11-32_1_0.png" type="image/png" />
   <title>Продажа оптики в Сочи | Оптика Юг</title>
 
-  <!-- Tailwind CSS (Local with CDN fallback for seamless loading in РФ) -->
+  <!-- Tailwind CSS -->
   <script src="./js/tailwindcss.min.js"></script>
   <script>if(typeof tailwind === 'undefined'){document.write('<script src="https://cdn.tailwindcss.com"><\/script>')}</script>
   <script>
@@ -45,7 +45,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Lucide Icons (Local with CDN fallback for seamless loading in РФ) -->
+  <!-- Icons -->
   <script src="./js/lucide.min.js"></script>
   <script>if(!window.lucide){document.write('<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"><\/script>')}</script>
 
@@ -122,22 +122,17 @@
 </head>
 <body class="bg-[#F8FAFC]">
 
-<!-- ============================================================
-     FLOATING GLASS HEADER
-============================================================ -->
 <header id="site-header" class="fixed top-3 inset-x-3 z-50 max-w-7xl mx-auto">
   <div class="glass rounded-full px-5 py-3 flex items-center justify-between gap-4 transition-all duration-300" id="header-inner">
 
-    <!-- Logo -->
-    <a href="#" class="flex items-center gap-3 flex-shrink-0 group">
+        <a href="#" class="flex items-center gap-3 flex-shrink-0 group">
       <img src="./images/photo_2024-04-24_15-11-32_1.png" alt="Оптика Юг" class="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
       <div class="hidden sm:block">
         <div class="text-xs font-600 text-slate-500 leading-none">Сочи • Курортный пр-т, 50</div>
       </div>
     </a>
 
-    <!-- Desktop Nav -->
-    <nav class="hidden lg:flex items-center gap-6">
+        <nav class="hidden lg:flex items-center gap-6">
       <a href="#catalog" class="text-sm font-600 text-slate-600 hover:text-slate-900 transition-colors duration-200 relative group">
         Каталог
         <span class="absolute -bottom-0.5 left-0 h-px bg-sky-500 w-0 group-hover:w-full transition-all duration-300"></span>
@@ -160,8 +155,7 @@
       </a>
     </nav>
 
-    <!-- Right actions -->
-    <div class="hidden lg:flex items-center gap-3">
+        <div class="hidden lg:flex items-center gap-3">
       <a href="tel:+79884036442" class="flex items-center gap-2 text-sm font-700 text-slate-700 hover:text-sky-600 transition-colors duration-200">
         <i data-lucide="phone" class="w-4 h-4"></i>
         <span>+7 (988) 403-64-42</span>
@@ -171,16 +165,14 @@
       </button>
     </div>
 
-    <!-- Mobile burger -->
-    <button id="burger-btn" class="lg:hidden flex flex-col gap-[5px] p-2 -mr-1" aria-label="Меню" aria-expanded="false">
+        <button id="burger-btn" class="lg:hidden flex flex-col gap-[5px] p-2 -mr-1" aria-label="Меню" aria-expanded="false">
       <span class="burger-line"></span>
       <span class="burger-line"></span>
       <span class="burger-line"></span>
     </button>
   </div>
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden flex-col glass mt-2 rounded-3xl p-6 gap-4">
+    <div id="mobile-menu" class="hidden flex-col glass mt-2 rounded-3xl p-6 gap-4">
     <nav class="flex flex-col gap-1">
       <a href="#catalog" class="mobile-nav-link text-base font-600 text-slate-700 px-4 py-3 rounded-2xl hover:bg-slate-50 transition-colors">Каталог</a>
       <a href="#services" class="mobile-nav-link text-base font-600 text-slate-700 px-4 py-3 rounded-2xl hover:bg-slate-50 transition-colors">Услуги</a>
@@ -204,33 +196,26 @@
   </div>
 </header>
 
-<!-- ============================================================
-     HERO SECTION
-============================================================ -->
+<!-- Hero -->
 <section id="hero" class="relative min-h-screen flex items-center pt-28 pb-16 px-4 overflow-hidden">
-  <!-- Ambient blobs -->
-  <div class="blob w-[600px] h-[600px] bg-sky-100 opacity-50 top-[-100px] right-[-200px]"></div>
+    <div class="blob w-[600px] h-[600px] bg-sky-100 opacity-50 top-[-100px] right-[-200px]"></div>
   <div class="blob w-[400px] h-[400px] bg-amber-100 opacity-40 bottom-[-50px] left-[-100px]"></div>
 
   <div class="relative z-10 max-w-7xl mx-auto w-full grid hero-grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
 
-    <!-- Left content col (7/12) -->
-    <div class="lg:col-span-7 flex flex-col gap-7">
-      <!-- Badge -->
-      <div class="inline-flex items-center gap-2.5 bg-white border border-slate-200 shadow-sm px-4 py-2 rounded-full w-fit">
+        <div class="lg:col-span-7 flex flex-col gap-7">
+            <div class="inline-flex items-center gap-2.5 bg-white border border-slate-200 shadow-sm px-4 py-2 rounded-full w-fit">
         <span class="w-2 h-2 bg-sky-500 rounded-full animate-pulse"></span>
         <span class="text-sm font-600 text-slate-600">Коллекция 2026 • Премиальная оптика в Сочи</span>
       </div>
 
-      <!-- Main heading -->
-      <h1 class="text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.08] tracking-tight text-slate-900">
+            <h1 class="text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.08] tracking-tight text-slate-900">
         Продажа<br />
         <span class="bg-gradient-to-r from-sky-600 to-sky-400 bg-clip-text text-transparent">оптики</span><br />
         в Сочи
       </h1>
 
-      <!-- Feature chips -->
-      <div class="flex flex-wrap gap-2.5">
+            <div class="flex flex-wrap gap-2.5">
         <div class="flex items-center gap-2 bg-white shadow-sm border border-slate-100 px-4 py-2.5 rounded-full text-sm font-600 text-slate-700">
           <i data-lucide="glasses" class="w-4 h-4 text-sky-500"></i>
           Медицинские очки
@@ -249,8 +234,7 @@
         </div>
       </div>
 
-      <!-- CTA -->
-      <div class="flex flex-wrap items-center gap-4">
+            <div class="flex flex-wrap items-center gap-4">
         <button onclick="openCallbackModal()" class="group flex items-center gap-3 bg-sky-600 hover:bg-sky-700 text-white font-700 text-base px-7 py-4 rounded-full transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-sky-500/30 hover:shadow-sky-500/45">
           Оставить заявку
           <i data-lucide="arrow-right" class="w-5 h-5 arrow-icon"></i>
@@ -266,8 +250,7 @@
         </a>
       </div>
 
-      <!-- Trust stats -->
-      <div class="flex items-center gap-8 pt-2">
+            <div class="flex items-center gap-8 pt-2">
         <div>
           <div class="text-2xl font-800 text-slate-900">5+</div>
           <div class="text-xs text-slate-500 font-500">лет в Сочи</div>
@@ -285,14 +268,12 @@
       </div>
     </div>
 
-    <!-- Right image col (5/12) -->
-    <div class="lg:col-span-5 hero-image-col relative mt-2 lg:mt-0">
+        <div class="lg:col-span-5 hero-image-col relative mt-2 lg:mt-0">
       <div class="relative rounded-3xl lg:rounded-[2rem] overflow-hidden shadow-xl lg:shadow-2xl border border-white/60 aspect-[16/11] sm:aspect-[4/3] lg:aspect-auto lg:h-[580px]">
         <img src="./images/AdobeStock_317116275_1_0.png.jpg" alt="Оптика Юг — продажа очков в Сочи" class="w-full h-full object-cover object-center" />
         <div class="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent"></div>
 
-        <!-- Floating widget inside card on mobile, protruding on desktop -->
-        <div class="animate-float absolute bottom-3 left-3 sm:bottom-4 sm:left-4 lg:-bottom-4 lg:-left-8 glass rounded-2xl p-3 sm:p-4 shadow-xl max-w-[calc(100%-1.5rem)] sm:max-w-[240px]">
+                <div class="animate-float absolute bottom-3 left-3 sm:bottom-4 sm:left-4 lg:-bottom-4 lg:-left-8 glass rounded-2xl p-3 sm:p-4 shadow-xl max-w-[calc(100%-1.5rem)] sm:max-w-[240px]">
           <div class="flex items-center sm:items-start gap-2.5 sm:gap-3">
             <div class="w-8 h-8 sm:w-9 sm:h-9 bg-sky-600 rounded-xl flex items-center justify-center flex-shrink-0">
               <i data-lucide="zap" class="w-4 h-4 text-white"></i>
@@ -304,8 +285,7 @@
           </div>
         </div>
 
-        <!-- Badge top right -->
-        <div class="absolute top-3 right-3 lg:-top-3 lg:-right-3 glass rounded-2xl px-3.5 py-1.5 sm:px-4 sm:py-2.5 shadow-lg">
+                <div class="absolute top-3 right-3 lg:-top-3 lg:-right-3 glass rounded-2xl px-3.5 py-1.5 sm:px-4 sm:py-2.5 shadow-lg">
           <div class="text-[11px] sm:text-xs font-700 text-amber-700 bg-amber-50 rounded-full px-2 py-0.5">Хит сезона</div>
         </div>
       </div>
@@ -313,14 +293,11 @@
   </div>
 </section>
 
-<!-- ============================================================
-     CATALOG BENTO GRID
-============================================================ -->
+<!-- Catalog -->
 <section id="catalog" class="py-24 px-4">
   <div class="max-w-7xl mx-auto">
 
-    <!-- Header -->
-    <div class="flex flex-col items-center text-center mb-14">
+        <div class="flex flex-col items-center text-center mb-14">
       <div class="inline-flex items-center gap-2 bg-sky-50 border border-sky-100 px-4 py-2 rounded-full mb-5">
         <span class="w-2 h-2 bg-sky-500 rounded-full animate-pulse"></span>
         <span class="text-sm font-600 text-sky-700">Каталог оптики</span>
@@ -329,11 +306,9 @@
       <p class="text-slate-500 text-lg max-w-xl leading-relaxed">Широкий выбор оправ и линз ведущих европейских брендов для каждого члена семьи</p>
     </div>
 
-    <!-- Bento grid 2x2 -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
 
-      <!-- Card 1: Men -->
-      <a href="https://vk.ru/opticasouth" target="_blank" rel="noopener" class="catalog-card group relative rounded-3xl overflow-hidden border border-slate-100 bg-white hover:border-sky-200 shadow-[0_20px_50px_rgba(15,23,42,0.05)] hover:shadow-[0_25px_60px_rgba(2,132,199,0.12)] transition-all duration-500 hover:-translate-y-1 aspect-[4/5] flex flex-col justify-end">
+            <a href="https://vk.ru/opticasouth" target="_blank" rel="noopener" class="catalog-card group relative rounded-3xl overflow-hidden border border-slate-100 bg-white hover:border-sky-200 shadow-[0_20px_50px_rgba(15,23,42,0.05)] hover:shadow-[0_25px_60px_rgba(2,132,199,0.12)] transition-all duration-500 hover:-translate-y-1 aspect-[4/5] flex flex-col justify-end">
         <div class="absolute inset-0">
           <img src="./images/catalog_men.jpg" alt="Очки мужские" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
           <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
@@ -354,8 +329,7 @@
         </div>
       </a>
 
-      <!-- Card 2: Women -->
-      <a href="https://vk.ru/opticasouth" target="_blank" rel="noopener" class="catalog-card group relative rounded-3xl overflow-hidden border border-slate-100 bg-white hover:border-sky-200 shadow-[0_20px_50px_rgba(15,23,42,0.05)] hover:shadow-[0_25px_60px_rgba(2,132,199,0.12)] transition-all duration-500 hover:-translate-y-1 aspect-[4/5] flex flex-col justify-end">
+            <a href="https://vk.ru/opticasouth" target="_blank" rel="noopener" class="catalog-card group relative rounded-3xl overflow-hidden border border-slate-100 bg-white hover:border-sky-200 shadow-[0_20px_50px_rgba(15,23,42,0.05)] hover:shadow-[0_25px_60px_rgba(2,132,199,0.12)] transition-all duration-500 hover:-translate-y-1 aspect-[4/5] flex flex-col justify-end">
         <div class="absolute inset-0">
           <img src="./images/catalog_women.jpg" alt="Очки женские" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
           <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
@@ -376,8 +350,7 @@
         </div>
       </a>
 
-      <!-- Card 3: Kids -->
-      <a href="https://vk.ru/opticasouth" target="_blank" rel="noopener" class="catalog-card group relative rounded-3xl overflow-hidden border border-slate-100 bg-white hover:border-sky-200 shadow-[0_20px_50px_rgba(15,23,42,0.05)] hover:shadow-[0_25px_60px_rgba(2,132,199,0.12)] transition-all duration-500 hover:-translate-y-1 aspect-[4/5] flex flex-col justify-end">
+            <a href="https://vk.ru/opticasouth" target="_blank" rel="noopener" class="catalog-card group relative rounded-3xl overflow-hidden border border-slate-100 bg-white hover:border-sky-200 shadow-[0_20px_50px_rgba(15,23,42,0.05)] hover:shadow-[0_25px_60px_rgba(2,132,199,0.12)] transition-all duration-500 hover:-translate-y-1 aspect-[4/5] flex flex-col justify-end">
         <div class="absolute inset-0">
           <img src="./images/catalog_kids.jpg" alt="Очки детские" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
           <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
@@ -398,8 +371,7 @@
         </div>
       </a>
 
-      <!-- Card 4: Lenses -->
-      <a href="https://vk.ru/opticasouth" target="_blank" rel="noopener" class="catalog-card group relative rounded-3xl overflow-hidden border border-slate-100 bg-white hover:border-sky-200 shadow-[0_20px_50px_rgba(15,23,42,0.05)] hover:shadow-[0_25px_60px_rgba(2,132,199,0.12)] transition-all duration-500 hover:-translate-y-1 aspect-[4/5] flex flex-col justify-end">
+            <a href="https://vk.ru/opticasouth" target="_blank" rel="noopener" class="catalog-card group relative rounded-3xl overflow-hidden border border-slate-100 bg-white hover:border-sky-200 shadow-[0_20px_50px_rgba(15,23,42,0.05)] hover:shadow-[0_25px_60px_rgba(2,132,199,0.12)] transition-all duration-500 hover:-translate-y-1 aspect-[4/5] flex flex-col justify-end">
         <div class="absolute inset-0">
           <img src="./images/catalog_lenses.jpg" alt="Линзы и уход" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
           <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
@@ -424,15 +396,12 @@
   </div>
 </section>
 
-<!-- ============================================================
-     SERVICES + PROMOS DUAL SECTION
-============================================================ -->
+<!-- Services & Promos -->
 <section id="services" class="py-24 px-4 bg-white">
   <div class="max-w-7xl mx-auto">
     <div class="grid lg:grid-cols-2 gap-8">
 
-      <!-- Services list -->
-      <div>
+            <div>
         <div class="inline-flex items-center gap-2 bg-slate-50 border border-slate-200 px-4 py-2 rounded-full mb-7">
           <i data-lucide="settings" class="w-4 h-4 text-slate-500"></i>
           <span class="text-sm font-600 text-slate-600">Наши услуги</span>
@@ -488,10 +457,8 @@
         </div>
       </div>
 
-      <!-- Promos dark card -->
-      <div id="promos" class="relative rounded-3xl p-10 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-sky-950 text-white flex flex-col justify-between gap-8 min-h-[480px]">
-        <!-- Background decorative numbers -->
-        <div class="absolute right-4 top-4 text-[140px] font-900 text-white/5 leading-none select-none pointer-events-none">%</div>
+            <div id="promos" class="relative rounded-3xl p-10 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-sky-950 text-white flex flex-col justify-between gap-8 min-h-[480px]">
+                <div class="absolute right-4 top-4 text-[140px] font-900 text-white/5 leading-none select-none pointer-events-none">%</div>
 
         <div class="relative z-10">
           <div class="inline-flex items-center gap-2 bg-white/10 border border-white/15 px-4 py-2 rounded-full mb-6">
@@ -527,20 +494,16 @@
   </div>
 </section>
 
-<!-- ============================================================
-     WHY TRUST US
-============================================================ -->
+<!-- Advantages -->
 <section class="py-24 px-4 bg-[#F8FAFC]">
   <div class="max-w-7xl mx-auto">
 
-    <!-- Header -->
-    <div class="flex flex-col items-center text-center mb-14">
+        <div class="flex flex-col items-center text-center mb-14">
       <h2 class="text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 mb-4">Почему нам доверяют</h2>
       <p class="text-slate-500 text-lg max-w-lg">С 2019 года помогаем жителям Сочи видеть мир чётче</p>
     </div>
 
-    <!-- Three glass cards -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
 
       <div class="bg-white rounded-3xl p-8 border border-slate-100 shadow-[0_20px_50px_rgba(15,23,42,0.04)] hover:shadow-[0_25px_60px_rgba(2,132,199,0.08)] transition-all duration-500 hover:-translate-y-1">
         <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-100 to-sky-200 flex items-center justify-center mb-6">
@@ -578,8 +541,7 @@
 
     </div>
 
-    <!-- Partners logos strip -->
-    <div class="bg-white rounded-3xl border border-slate-100 px-8 py-8 shadow-sm">
+        <div class="bg-white rounded-3xl border border-slate-100 px-8 py-8 shadow-sm">
       <p class="text-center text-xs font-600 uppercase tracking-widest text-slate-400 mb-7">Официальные линзы ведущих производителей</p>
       <div class="flex items-center justify-center gap-8 flex-wrap">
         <img src="./images/Group_1mmmmmm.png" alt="Производитель линз" class="partner-logo h-10 object-contain" />
@@ -591,14 +553,11 @@
   </div>
 </section>
 
-<!-- ============================================================
-     VISION ENCYCLOPEDIA — TABS
-============================================================ -->
+<!-- Vision -->
 <section id="vision" class="py-24 px-4 bg-white">
   <div class="max-w-7xl mx-auto">
 
-    <!-- Header -->
-    <div class="flex flex-col items-center text-center mb-12">
+        <div class="flex flex-col items-center text-center mb-12">
       <div class="inline-flex items-center gap-2 bg-slate-50 border border-slate-200 px-4 py-2 rounded-full mb-5">
         <i data-lucide="book-open" class="w-4 h-4 text-slate-500"></i>
         <span class="text-sm font-600 text-slate-600">Энциклопедия зрения</span>
@@ -607,16 +566,14 @@
       <p class="text-slate-500 text-lg max-w-xl">Выберите нарушение зрения, чтобы узнать подробнее</p>
     </div>
 
-    <!-- Tabs buttons: 2x2 grid on mobile, row on tablet/desktop -->
-    <div class="grid grid-cols-2 sm:flex sm:flex-wrap sm:justify-center gap-2.5 mb-10 max-w-xl mx-auto px-2" id="vision-tabs">
+        <div class="grid grid-cols-2 sm:flex sm:flex-wrap sm:justify-center gap-2.5 mb-10 max-w-xl mx-auto px-2" id="vision-tabs">
       <button class="tab-btn active px-3 sm:px-5 py-3 rounded-2xl sm:rounded-full text-xs sm:text-sm font-700 border border-slate-200 text-slate-600 hover:border-slate-900 text-center transition-all shadow-sm" data-tab="myopia">Близорукость</button>
       <button class="tab-btn px-3 sm:px-5 py-3 rounded-2xl sm:rounded-full text-xs sm:text-sm font-700 border border-slate-200 text-slate-600 hover:border-slate-900 text-center transition-all shadow-sm" data-tab="farsight">Дальнозоркость</button>
       <button class="tab-btn px-3 sm:px-5 py-3 rounded-2xl sm:rounded-full text-xs sm:text-sm font-700 border border-slate-200 text-slate-600 hover:border-slate-900 text-center transition-all shadow-sm" data-tab="astig">Астигматизм</button>
       <button class="tab-btn px-3 sm:px-5 py-3 rounded-2xl sm:rounded-full text-xs sm:text-sm font-700 border border-slate-200 text-slate-600 hover:border-slate-900 text-center transition-all shadow-sm" data-tab="presby">Пресбиопия</button>
     </div>
 
-    <!-- Tab panels -->
-    <div id="vision-panels">
+        <div id="vision-panels">
 
       <div class="tab-panel active" data-panel="myopia">
         <div class="grid md:grid-cols-2 gap-8 items-center">
@@ -702,14 +659,10 @@
   </div>
 </section>
 
-<!-- ============================================================
-     ABOUT + CONTACT FORM
-============================================================ -->
 <section id="contacts" class="py-24 px-4 bg-[#F8FAFC]">
   <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-start">
 
-    <!-- About -->
-    <div>
+        <div>
       <div class="inline-flex items-center gap-2 bg-white border border-slate-200 px-4 py-2 rounded-full mb-7">
         <i data-lucide="store" class="w-4 h-4 text-slate-500"></i>
         <span class="text-sm font-600 text-slate-600">О салоне</span>
@@ -718,8 +671,7 @@
       <p class="text-slate-600 leading-relaxed mb-5">Наш салон оптики расположен в гостинице «Магнолия» на Курортном проспекте. Мы предлагаем полный спектр услуг: от профессиональной проверки зрения до изготовления очков по рецепту за один рабочий день.</p>
       <p class="text-slate-600 leading-relaxed mb-8">Работаем с ведущими европейскими производителями оправ и линз — Essilor, Carl Zeiss, Silhouette, Rodenstock. Наши мастера имеют многолетний опыт и регулярно проходят обучение у партнёров.</p>
 
-      <!-- Contact details -->
-      <div class="flex flex-col gap-4">
+            <div class="flex flex-col gap-4">
         <div class="flex items-center gap-4 p-5 bg-white rounded-2xl border border-slate-100">
           <div class="w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center flex-shrink-0">
             <i data-lucide="map-pin" class="w-5 h-5 text-sky-600"></i>
@@ -751,8 +703,7 @@
       </div>
     </div>
 
-    <!-- Contact form -->
-    <div class="bg-white rounded-3xl border border-slate-100 shadow-[0_20px_50px_rgba(15,23,42,0.05)] p-8 lg:p-10">
+        <div class="bg-white rounded-3xl border border-slate-100 shadow-[0_20px_50px_rgba(15,23,42,0.05)] p-8 lg:p-10">
       <h3 class="text-2xl font-800 text-slate-900 mb-2">Напишите нам</h3>
       <p class="text-slate-500 text-sm mb-8 leading-relaxed">Оставьте заявку и мы свяжемся с вами в течение 15 минут</p>
 
@@ -784,21 +735,17 @@
   </div>
 </section>
 
-<!-- ============================================================
-     FOOTER
-============================================================ -->
+<!-- Footer -->
 <footer class="bg-[#0B1120] text-white py-14 px-4">
   <div class="max-w-7xl mx-auto">
     <div class="grid md:grid-cols-3 gap-10 mb-10">
-      <!-- Brand -->
-      <div>
+            <div>
         <div class="flex items-center gap-3 mb-4">
           <img src="./images/photo_2024-04-24_15-11-32_1.png" alt="Оптика Юг" class="h-9 object-contain brightness-200" />
         </div>
         <p class="text-slate-400 text-sm leading-relaxed">Премиальный салон оптики в Сочи. Изготовление очков за 1 день. Европейские бренды. Профессиональная проверка зрения.</p>
       </div>
-      <!-- Contacts -->
-      <div>
+            <div>
         <div class="text-xs font-700 uppercase tracking-widest text-slate-500 mb-4">Контакты</div>
         <div class="flex flex-col gap-3">
           <div class="flex items-start gap-3">
@@ -811,8 +758,7 @@
           </div>
         </div>
       </div>
-      <!-- Phones -->
-      <div>
+            <div>
         <div class="text-xs font-700 uppercase tracking-widest text-slate-500 mb-4">Телефоны</div>
         <div class="flex flex-col gap-4">
           <div>
@@ -833,9 +779,7 @@
   </div>
 </footer>
 
-<!-- ============================================================
-     MOBILE BOTTOM BAR (fixed, only on mobile)
-============================================================ -->
+<!-- Mobile bottom bar -->
 <div class="fixed bottom-0 inset-x-0 z-30 md:hidden bg-white/90 backdrop-blur-lg border-t border-slate-200 p-3 flex gap-3">
   <a href="tel:+79884036442" class="flex-1 flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-800 font-700 text-sm py-3 rounded-2xl transition-colors">
     <i data-lucide="phone-call" class="w-4 h-4"></i>
@@ -847,9 +791,7 @@
   </button>
 </div>
 
-<!-- ============================================================
-     CALLBACK MODAL
-============================================================ -->
+<!-- Modal: Callback -->
 <div id="callback-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="callback-modal-title">
   <div class="bg-white rounded-3xl shadow-2xl w-full max-w-md p-8 relative" onclick="event.stopPropagation()">
     <button onclick="closeCallbackModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center transition-colors" aria-label="Закрыть">
@@ -881,16 +823,13 @@
   </div>
 </div>
 
-<!-- ============================================================
-     THANK YOU MODAL
-============================================================ -->
+<!-- Modal: Success -->
 <div id="thankyou-modal" class="modal-overlay" role="dialog" aria-modal="true">
   <div class="bg-white rounded-3xl shadow-2xl w-full max-w-sm p-10 text-center relative" onclick="event.stopPropagation()">
     <button onclick="closeThankYouModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center transition-colors" aria-label="Закрыть">
       <i data-lucide="x" class="w-4 h-4 text-slate-600"></i>
     </button>
-    <!-- Animated checkmark -->
-    <div class="flex justify-center mb-6">
+        <div class="flex justify-center mb-6">
       <svg width="64" height="64" viewBox="0 0 52 52">
         <circle class="checkmark-circle" cx="26" cy="26" r="24" fill="none" stroke="#16a34a" stroke-width="2"/>
         <path class="checkmark-path" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round"/>
@@ -904,11 +843,9 @@
   </div>
 </div>
 
-<!-- ============================================================
-     SCRIPTS
-============================================================ -->
+<!-- Scripts -->
 
-<!-- Analytics (deferred) -->
+<!-- GTM -->
 <script>
 (function() {
   var gtmFired = false;
@@ -931,7 +868,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Init Lucide icons
   if (window.lucide) lucide.createIcons();
 
-  // ── Header scroll shadow ──────────────────────────────────────
+  // Header shadow
   var headerInner = document.getElementById('header-inner');
   window.addEventListener('scroll', function () {
     if (window.scrollY > 20) {
@@ -941,7 +878,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }, { passive: true });
 
-  // ── Mobile Burger Menu ────────────────────────────────────────
+  // Mobile menu
   var burgerBtn = document.getElementById('burger-btn');
   var mobileMenu = document.getElementById('mobile-menu');
 
@@ -975,7 +912,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // ── Vision Tabs ───────────────────────────────────────────────
+  // Tabs
   var tabBtns = document.querySelectorAll('.tab-btn');
   var tabPanels = document.querySelectorAll('.tab-panel');
 
@@ -992,7 +929,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // ── Modal: Callback ───────────────────────────────────────────
+  // Modals
   var callbackModal = document.getElementById('callback-modal');
   var thankyouModal = document.getElementById('thankyou-modal');
 
@@ -1037,7 +974,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // ── Form submission handler ───────────────────────────────────
+  // Forms submit
   function handleFormSubmit(form, submitBtn, extraAction) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
