@@ -11,22 +11,18 @@
   <title>«По Шаурме» — Крафтовая шаурма на огне в Сочи | ул. Чайковского, 5</title>
   <meta name="description" content="Крафтовая шаурма на открытом огне в Сочи (ул. Чайковского, 5). 12 фирменных рецептов, порции до 530 г, хрустящий лаваш, свежее фермерское мясо и авторские соусы. Рейтинг 5.0 ★ на Яндекс Картах. Быстрый предзаказ.">
 
-  <!-- OpenGraph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="«По Шаурме» — Крафтовая шаурма на огне в Сочи">
   <meta property="og:description" content="Фирменные рецепты, честный вес до 550 г, хрустящий лаваш, который не размокает. Рейтинг 5.0 ★ на Яндекс Картах.">
   <meta property="og:image" content="img/dishes/shaurma_classic.jpg">
   <meta property="og:url" content="https://kalashnikovartem402-jpg.github.io/">
 
-  <!-- Favicon -->
   <link rel="icon" href="https://client-site.s3.yandex.net/r21827886/_next/static/media/favicon-32x32.6c45739b.png" type="image/png">
 
-  <!-- Google Fonts: Unbounded (Headings) + Plus Jakarta Sans (Body Text) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Unbounded:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -58,11 +54,10 @@
     };
   </script>
 
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
-    /* Custom Scrollbar */
+
     ::-webkit-scrollbar {
       width: 8px;
       height: 8px;
@@ -78,7 +73,6 @@
       background: #F97316;
     }
 
-    /* Hide horizontal scrollbar for mobile category slider */
     .no-scrollbar::-webkit-scrollbar {
       display: none;
     }
@@ -87,7 +81,6 @@
       scrollbar-width: none;
     }
 
-    /* Shimmer animation for key CTA buttons */
     @keyframes btnShimmer {
       0% { transform: translateX(-150%) skewX(-20deg); }
       35%, 100% { transform: translateX(250%) skewX(-20deg); }
@@ -112,15 +105,12 @@
 </head>
 <body class="bg-[#0B0C10] text-zinc-100 selection:bg-orange-500 selection:text-white min-h-screen relative overflow-x-hidden">
 
-  <!-- Ambient Background Glows -->
   <div class="fixed top-0 left-1/4 w-[450px] h-[450px] bg-amber-500/15 rounded-full blur-[130px] pointer-events-none -z-10 animate-pulse" style="animation-duration: 8s;"></div>
   <div class="fixed top-1/3 right-0 w-[550px] h-[550px] bg-orange-600/15 rounded-full blur-[150px] pointer-events-none -z-10"></div>
   <div class="fixed bottom-10 left-10 w-[500px] h-[500px] bg-red-600/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
 
-  <!-- ================= A. FLOATING GLASS HEADER ================= -->
   <header class="fixed top-3 sm:top-4 inset-x-3 sm:inset-x-4 max-w-7xl mx-auto z-40 rounded-full bg-[#14161D]/85 backdrop-blur-xl border border-white/10 px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between shadow-2xl transition-all duration-300">
-    
-    <!-- Left: Brand Logo & Rating Badge -->
+
     <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
       <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-tr from-orange-500 via-amber-500 to-red-500 flex items-center justify-center text-white shadow-fire-glow group-hover:scale-105 transition-transform flex-shrink-0">
         <i data-lucide="flame" class="w-5 h-5 fill-white"></i>
@@ -139,7 +129,6 @@
       </div>
     </a>
 
-    <!-- Center: Desktop Navigation Links -->
     <nav class="hidden md:flex items-center gap-7 text-xs font-semibold uppercase tracking-wider text-zinc-300">
       <a href="#menu" class="hover:text-orange-400 transition-colors">Меню</a>
       <a href="#about" class="hover:text-orange-400 transition-colors">О заведении</a>
@@ -147,26 +136,23 @@
       <a href="#contacts" class="hover:text-orange-400 transition-colors">Локация</a>
     </nav>
 
-    <!-- Right: Status, Phone & Cart Capsule Button -->
     <div class="flex items-center gap-2 sm:gap-3.5">
-      <!-- Live Status Badge (Desktop) -->
+
       <div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-xs">
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
         <span class="text-emerald-400 font-bold">Открыто</span>
         <span class="text-zinc-500 text-[11px]">до 22:00</span>
       </div>
 
-      <!-- Phone Link -->
-      <a 
-        href="tel:+79388771277" 
+      <a
+        href="tel:+79388771277"
         class="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-xs font-bold text-white transition-all active:scale-95"
       >
         <i data-lucide="phone" class="w-3.5 h-3.5 text-orange-400"></i>
         <span>+7 (938) 877-12-77</span>
       </a>
 
-      <!-- Cart Button with Counter -->
-      <button 
+      <button
         onclick="window.poShaurmeApp.openCartDrawer()"
         class="btn-fire-shimmer relative px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-orange-500 via-amber-500 to-red-500 hover:from-orange-400 hover:to-red-400 text-white font-extrabold text-xs sm:text-sm tracking-wide shadow-fire-glow hover:shadow-fire-lg transition-all active:scale-95 flex items-center gap-2 cursor-pointer"
         aria-label="Открыть корзину"
@@ -178,8 +164,7 @@
         </span>
       </button>
 
-      <!-- Mobile Hamburger Button -->
-      <button 
+      <button
         onclick="window.poShaurmeApp.openMobileMenu()"
         class="md:hidden w-9 h-9 rounded-full bg-white/[0.05] border border-white/10 flex items-center justify-center text-zinc-300 hover:text-white transition active:scale-95 cursor-pointer"
         aria-label="Меню"
@@ -189,14 +174,11 @@
     </div>
   </header>
 
-  <!-- ================= B. HERO SECTION ================= -->
   <section class="relative pt-28 sm:pt-36 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-      
-      <!-- Left Column: 7 Cols Text & CTAs -->
+
       <div class="lg:col-span-7 flex flex-col items-start z-10">
-        
-        <!-- Yandex "Хорошее место" Award Badge -->
+
         <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#14161D]/90 border border-amber-500/30 backdrop-blur-xl mb-6 shadow-lg">
           <span class="flex items-center justify-center w-5 h-5 rounded-full bg-amber-500 text-black font-black text-xs">★</span>
           <span class="text-xs font-bold text-amber-300 uppercase tracking-wider">
@@ -205,7 +187,6 @@
           <span class="text-[11px] text-zinc-500 hidden sm:inline">• Рейтинг 5.0</span>
         </div>
 
-        <!-- Main Punchy Title with Fire Gradient -->
         <h1 class="font-display font-black text-3xl sm:text-5xl lg:text-6xl text-white uppercase tracking-tight leading-[1.05] mb-5">
           Крафтовая шаурма <br/>
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-amber-400 to-red-500">
@@ -214,12 +195,10 @@
           в Сочи
         </h1>
 
-        <!-- Appetizing Subtitle based on Real Features -->
         <p class="text-zinc-300 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl font-normal mb-7">
           12 авторских рецептов от 270 до 530 грамм. Поджаристый лаваш, который <strong class="text-white font-semibold">никогда не размокает</strong>, сочное фермерское мясо на углях, картофель фри прямо внутри шаурмы BBQ и домашние соусы. На Чайковского, 5.
         </p>
 
-        <!-- Glass Chips Badges -->
         <div class="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-8">
           <div class="px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md text-xs font-semibold text-zinc-200 flex items-center gap-1.5">
             <span>🥩</span> Свежее мясо на огне
@@ -238,19 +217,18 @@
           </div>
         </div>
 
-        <!-- Two CTA Buttons -->
         <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto">
-          <a 
-            href="#menu" 
+          <a
+            href="#menu"
             class="btn-fire-shimmer px-8 py-4 rounded-2xl bg-gradient-to-r from-orange-500 via-amber-500 to-red-500 hover:from-orange-400 hover:to-red-400 text-white font-display font-black text-sm uppercase tracking-wider shadow-fire-glow hover:shadow-fire-lg transition-all active:scale-95 flex items-center justify-center gap-2 text-center"
           >
             <span>Смотреть меню</span>
             <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
           </a>
 
-          <a 
-            href="https://eda.yandex.ru/r/posaurme" 
-            target="_blank" 
+          <a
+            href="https://eda.yandex.ru/r/posaurme"
+            target="_blank"
             rel="noopener noreferrer"
             class="px-7 py-4 rounded-2xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 hover:border-yellow-400/50 backdrop-blur-xl text-white font-semibold text-sm transition-all active:scale-95 flex items-center justify-center gap-2.5 text-center group"
           >
@@ -262,22 +240,19 @@
 
       </div>
 
-      <!-- Right Column: 5 Cols Food Visual + Floating Glass Widgets -->
       <div class="lg:col-span-5 relative mt-4 lg:mt-0">
-        
-        <!-- Large Frame with Food Photo -->
+
         <div class="relative rounded-[2.5rem] overflow-hidden border border-white/15 bg-gradient-to-b from-white/10 to-transparent p-2 shadow-2xl">
           <div class="relative rounded-[2.2rem] overflow-hidden aspect-[4/5] bg-black/80">
-            <img 
-              src="img/dishes/shaurma_classic.jpg" 
-              alt="Крафтовая шаурма По Шаурме Сочи" 
+            <img
+              src="img/dishes/shaurma_classic.jpg"
+              alt="Крафтовая шаурма По Шаурме Сочи"
               class="w-full h-full object-cover filter brightness-95 hover:scale-105 transition-transform duration-700"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-[#0B0C10] via-transparent to-black/30"></div>
           </div>
         </div>
 
-        <!-- Floating Glass Widget 1: Rating -->
         <div class="absolute -top-4 -left-4 sm:-left-8 backdrop-blur-xl bg-[#14161D]/90 border border-white/15 rounded-2xl p-4 shadow-2xl max-w-[210px] hidden xs:block transform -rotate-1 hover:rotate-0 transition-transform">
           <div class="flex items-center gap-2 mb-1">
             <div class="w-8 h-8 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center">
@@ -291,12 +266,11 @@
           <div class="text-[10px] text-zinc-400">Выбор жителей и гостей Сочи</div>
         </div>
 
-        <!-- Floating Glass Widget 2: Real Guest Quote -->
         <div class="absolute -bottom-6 -right-3 sm:-right-6 backdrop-blur-xl bg-[#14161D]/90 border border-white/15 rounded-2xl p-4 shadow-2xl max-w-[280px] transform rotate-1 hover:rotate-0 transition-transform">
           <div class="flex items-center gap-2 mb-2">
-            <img 
-              src="https://avatars.mds.yandex.net/get-yapic/64336/0f-8/islands-150" 
-              alt="Софья С" 
+            <img
+              src="https://avatars.mds.yandex.net/get-yapic/64336/0f-8/islands-150"
+              alt="Софья С"
               class="w-7 h-7 rounded-full border border-orange-500/40"
             />
             <div class="text-xs font-bold text-white">Софья С. <span class="text-amber-400 font-normal">★★★★★</span></div>
@@ -311,10 +285,8 @@
     </div>
   </section>
 
-  <!-- ================= C. INTERACTIVE MENU SECTION ================= -->
   <section id="menu" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-24">
-    
-    <!-- Section Heading -->
+
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 sm:mb-10">
       <div>
         <div class="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-widest text-orange-400 mb-2">
@@ -330,29 +302,26 @@
       </p>
     </div>
 
-    <!-- Category Tabs Filter (Horizontally scrollable on mobile) -->
     <div class="relative mb-8 sm:mb-10">
-      <div 
-        id="categoryTabs" 
+      <div
+        id="categoryTabs"
         class="flex items-center gap-2.5 overflow-x-auto no-scrollbar snap-x py-1.5 px-0.5"
       >
-        <!-- Injected via JavaScript -->
+
       </div>
     </div>
 
-    <!-- Dishes Bento Grid -->
-    <div 
-      id="dishesGrid" 
+    <div
+      id="dishesGrid"
       class="grid grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-6"
     >
-      <!-- Injected via JavaScript -->
+
     </div>
 
   </section>
 
-  <!-- ================= D. BENTO GRID FEATURES & ATMOSPHERE ================= -->
   <section id="about" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-24 border-t border-white/5">
-    
+
     <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
       <div class="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-widest text-amber-400 mb-2">
         <i data-lucide="shield-check" class="w-4 h-4"></i>
@@ -366,10 +335,8 @@
       </p>
     </div>
 
-    <!-- 4 Compact Sections Grid (2x2 on Mobile, 4 in a row on Desktop) -->
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
-      
-      <!-- Section 1: Honest Weight -->
+
       <div class="rounded-2xl sm:rounded-3xl bg-[#14161D] border border-white/10 hover:border-orange-500/40 backdrop-blur-xl p-3.5 sm:p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group">
         <div>
           <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-orange-500/20 text-orange-400 flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
@@ -391,7 +358,6 @@
         </div>
       </div>
 
-      <!-- Section 2: Crispy Lavash -->
       <div class="rounded-2xl sm:rounded-3xl bg-[#14161D] border border-white/10 hover:border-amber-500/40 backdrop-blur-xl p-3.5 sm:p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group">
         <div>
           <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
@@ -413,7 +379,6 @@
         </div>
       </div>
 
-      <!-- Section 3: Meat on Fire & Halal -->
       <div class="rounded-2xl sm:rounded-3xl bg-[#14161D] border border-white/10 hover:border-red-500/40 backdrop-blur-xl p-3.5 sm:p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group">
         <div>
           <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-red-500/20 text-red-400 flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
@@ -435,7 +400,6 @@
         </div>
       </div>
 
-      <!-- Section 4: Open Kitchen & Cleanliness -->
       <div class="rounded-2xl sm:rounded-3xl bg-[#14161D] border border-white/10 hover:border-emerald-500/40 backdrop-blur-xl p-3.5 sm:p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group">
         <div>
           <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
@@ -461,9 +425,8 @@
 
   </section>
 
-  <!-- ================= E. REVIEWS WALL (SOCIAL PROOF) ================= -->
   <section id="reviews" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-24 border-t border-white/5">
-    
+
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12">
       <div>
         <div class="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-widest text-amber-400 mb-2">
@@ -475,10 +438,9 @@
         </h2>
       </div>
 
-      <!-- Direct Link to Yandex Maps Reviews -->
-      <a 
-        href="https://yandex.ru/maps/org/po_shaurme/132211386063/reviews/" 
-        target="_blank" 
+      <a
+        href="https://yandex.ru/maps/org/po_shaurme/132211386063/reviews/"
+        target="_blank"
         rel="noopener noreferrer"
         class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 hover:border-amber-400/50 text-white font-bold text-xs uppercase tracking-wider transition active:scale-95"
       >
@@ -487,19 +449,16 @@
       </a>
     </div>
 
-    <!-- Reviews Grid -->
     <div id="reviewsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Injected via JavaScript -->
+
     </div>
 
   </section>
 
-  <!-- ================= F. LOCATION & CONTACTS ================= -->
   <section id="contacts" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-24 border-t border-white/5">
-    
+
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-      
-      <!-- Left Column: Details & Fast Action Buttons (5 cols) -->
+
       <div class="lg:col-span-5 rounded-3xl bg-[#14161D] border border-white/10 p-7 sm:p-9 flex flex-col justify-between backdrop-blur-xl">
         <div>
           <div class="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-widest text-orange-400 mb-2">
@@ -511,7 +470,7 @@
           </h2>
 
           <div class="space-y-6 text-sm text-zinc-300">
-            <!-- Address -->
+
             <div class="flex items-start gap-4">
               <div class="w-10 h-10 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center flex-shrink-0 mt-0.5">
                 <i data-lucide="map-pin" class="w-5 h-5"></i>
@@ -522,7 +481,6 @@
               </div>
             </div>
 
-            <!-- Hours -->
             <div class="flex items-start gap-4">
               <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5">
                 <i data-lucide="clock" class="w-5 h-5"></i>
@@ -533,7 +491,6 @@
               </div>
             </div>
 
-            <!-- Phone -->
             <div class="flex items-start gap-4">
               <div class="w-10 h-10 rounded-xl bg-red-500/20 text-red-400 flex items-center justify-center flex-shrink-0 mt-0.5">
                 <i data-lucide="phone-call" class="w-5 h-5"></i>
@@ -546,11 +503,10 @@
           </div>
         </div>
 
-        <!-- Action Buttons -->
         <div class="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row gap-3">
-          <a 
-            href="https://yandex.ru/maps?rtext=~43.596092,39.722688&ruri=~ymapsbm1://org?oid=132211386063" 
-            target="_blank" 
+          <a
+            href="https://yandex.ru/maps?rtext=~43.596092,39.722688&ruri=~ymapsbm1://org?oid=132211386063"
+            target="_blank"
             rel="noopener noreferrer"
             class="flex-1 py-3.5 px-4 rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-400 hover:to-amber-400 text-white font-bold text-xs uppercase tracking-wider shadow-fire-glow text-center flex items-center justify-center gap-2 transition active:scale-95"
           >
@@ -558,9 +514,9 @@
             <span>Построить маршрут</span>
           </a>
 
-          <a 
-            href="https://wa.me/79388771277" 
-            target="_blank" 
+          <a
+            href="https://wa.me/79388771277"
+            target="_blank"
             rel="noopener noreferrer"
             class="py-3.5 px-5 rounded-2xl bg-emerald-600/90 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-2 transition active:scale-95"
           >
@@ -571,18 +527,17 @@
 
       </div>
 
-      <!-- Right Column: Interactive Map Widget (7 cols) -->
       <div class="lg:col-span-7 rounded-3xl overflow-hidden border border-white/10 bg-[#14161D] relative shadow-2xl min-h-[380px] sm:min-h-[440px]">
-        <iframe 
-          src="https://yandex.ru/map-widget/v1/?ll=39.722688%2C43.596092&z=17&pt=39.722688%2C43.596092%2Cpm2rdm" 
-          width="100%" 
-          height="100%" 
-          frameborder="0" 
+        <iframe
+          src="https://yandex.ru/map-widget/v1/?ll=39.722688%2C43.596092&z=17&pt=39.722688%2C43.596092%2Cpm2rdm"
+          width="100%"
+          height="100%"
+          frameborder="0"
           allowfullscreen="true"
           style="position:absolute;top:0;left:0;width:100%;height:100%;filter:invert(90%) hue-rotate(180deg) brightness(85%) contrast(110%);border:0;"
           title="Карта По Шаурме в Сочи"
         ></iframe>
-        <!-- Floating badge on map -->
+
         <div class="absolute bottom-4 left-4 right-4 sm:right-auto backdrop-blur-md bg-[#0B0C10]/90 border border-white/15 rounded-2xl p-3.5 shadow-xl flex items-center gap-3">
           <div class="w-9 h-9 rounded-xl bg-orange-500 flex items-center justify-center text-white flex-shrink-0">
             <i data-lucide="flame" class="w-5 h-5"></i>
@@ -598,11 +553,9 @@
 
   </section>
 
-  <!-- ================= FOOTER ================= -->
   <footer class="py-12 border-t border-white/5 bg-[#0B0C10] text-zinc-400 text-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-      
-      <!-- Logo & Copyright -->
+
       <div class="flex items-center gap-3">
         <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-orange-500 to-amber-500 flex items-center justify-center text-white">
           <i data-lucide="flame" class="w-4 h-4 fill-white"></i>
@@ -613,7 +566,6 @@
         </div>
       </div>
 
-      <!-- Quick Links -->
       <div class="flex items-center gap-6 text-xs font-medium uppercase tracking-wider text-zinc-400">
         <a href="#menu" class="hover:text-white transition">Меню</a>
         <a href="#about" class="hover:text-white transition">О нас</a>
@@ -621,7 +573,6 @@
         <a href="#contacts" class="hover:text-white transition">Контакты</a>
       </div>
 
-      <!-- Rating Badge -->
       <div class="flex items-center gap-2">
         <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/20 text-[11px] font-bold">
           ★ 5.0 на Яндекс Картах
@@ -631,19 +582,17 @@
     </div>
   </footer>
 
-  <!-- ================= MOBILE STICKY BOTTOM BAR ================= -->
   <div class="fixed bottom-0 inset-x-0 z-30 md:hidden bg-[#14161D]/95 backdrop-blur-xl border-t border-white/10 p-3 flex items-center gap-3 shadow-2xl">
-    <!-- Call Quick Button -->
-    <a 
-      href="tel:+79388771277" 
+
+    <a
+      href="tel:+79388771277"
       class="w-12 h-12 rounded-2xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-orange-400 active:scale-95 transition flex-shrink-0"
       aria-label="Позвонить"
     >
       <i data-lucide="phone" class="w-5 h-5"></i>
     </a>
 
-    <!-- Open Cart Button -->
-    <button 
+    <button
       onclick="window.poShaurmeApp.openCartDrawer()"
       class="flex-1 h-12 rounded-2xl bg-gradient-to-r from-orange-500 via-amber-500 to-red-500 text-white font-extrabold text-xs uppercase tracking-wider flex items-center justify-between px-5 shadow-fire-glow active:scale-98 transition cursor-pointer"
     >
@@ -658,24 +607,21 @@
     </button>
   </div>
 
-  <!-- ================= CART SLIDE-OVER DRAWER (HIDDEN BY DEFAULT) ================= -->
-  <div 
-    id="cartDrawer" 
+  <div
+    id="cartDrawer"
     class="fixed inset-0 z-50 hidden"
-    role="dialog" 
+    role="dialog"
     aria-modal="true"
   >
-    <!-- Backdrop overlay -->
-    <div 
-      onclick="window.poShaurmeApp.closeCartDrawer()" 
+
+    <div
+      onclick="window.poShaurmeApp.closeCartDrawer()"
       class="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity"
     ></div>
 
-    <!-- Drawer Panel -->
     <div class="absolute inset-y-0 right-0 max-w-full flex pl-6 sm:pl-10">
       <div class="w-screen max-w-md bg-[#14161D] border-l border-white/10 flex flex-col justify-between shadow-2xl">
-        
-        <!-- Drawer Header -->
+
         <div class="p-6 border-b border-white/10 flex items-center justify-between bg-[#14161D]/90 backdrop-blur-md">
           <div class="flex items-center gap-3">
             <div class="w-9 h-9 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center">
@@ -686,7 +632,7 @@
               <p class="text-[11px] text-zinc-400">Быстро приготовим к вашему визиту</p>
             </div>
           </div>
-          <button 
+          <button
             onclick="window.poShaurmeApp.closeCartDrawer()"
             class="w-9 h-9 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] text-zinc-400 hover:text-white flex items-center justify-center transition cursor-pointer"
             aria-label="Закрыть"
@@ -695,15 +641,13 @@
           </button>
         </div>
 
-        <!-- Drawer Body: List of Items -->
-        <div 
-          id="cartDrawerItems" 
+        <div
+          id="cartDrawerItems"
           class="flex-1 overflow-y-auto p-5 sm:p-6 space-y-3.5"
         >
-          <!-- Dynamic Items Injected Here -->
+
         </div>
 
-        <!-- Drawer Footer: Subtotal & Checkout -->
         <div class="p-6 border-t border-white/10 bg-[#0B0C10]/90 space-y-4">
           <div class="flex items-baseline justify-between">
             <span class="text-sm font-semibold text-zinc-400">Сумма заказа:</span>
@@ -713,13 +657,13 @@
           </div>
 
           <div class="flex gap-2.5">
-            <button 
+            <button
               onclick="window.poShaurmeApp.openCheckoutModal()"
               class="btn-fire-shimmer flex-1 py-4 rounded-2xl bg-gradient-to-r from-orange-500 via-amber-500 to-red-500 hover:from-orange-400 hover:to-red-400 text-white font-display font-black text-xs sm:text-sm uppercase tracking-wider shadow-fire-glow transition active:scale-95 text-center cursor-pointer"
             >
               Оформить заказ ➔
             </button>
-            <button 
+            <button
               onclick="window.poShaurmeApp.clearCart()"
               class="px-4 py-4 rounded-2xl bg-white/[0.05] hover:bg-red-500/20 text-zinc-400 hover:text-red-400 border border-white/5 transition cursor-pointer"
               title="Очистить корзину"
@@ -736,23 +680,21 @@
     </div>
   </div>
 
-  <!-- ================= CHECKOUT MODAL (HIDDEN BY DEFAULT) ================= -->
-  <div 
-    id="checkoutModal" 
+  <div
+    id="checkoutModal"
     class="fixed inset-0 z-50 hidden overflow-y-auto"
-    role="dialog" 
+    role="dialog"
     aria-modal="true"
   >
-    <!-- Backdrop overlay -->
-    <div 
-      onclick="window.poShaurmeApp.closeCheckoutModal()" 
+
+    <div
+      onclick="window.poShaurmeApp.closeCheckoutModal()"
       class="fixed inset-0 bg-black/85 backdrop-blur-md transition-opacity"
     ></div>
 
     <div class="flex min-h-full items-center justify-center p-4">
       <div class="relative w-full max-w-lg rounded-3xl bg-[#14161D] border border-white/10 p-6 sm:p-8 shadow-2xl z-10">
-        
-        <!-- Modal Header -->
+
         <div class="flex items-center justify-between pb-4 border-b border-white/10 mb-5">
           <div class="flex items-center gap-3">
             <div class="w-9 h-9 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center">
@@ -763,7 +705,7 @@
               <p class="text-xs text-zinc-400">«По Шаурме» • ул. Чайковского, 5</p>
             </div>
           </div>
-          <button 
+          <button
             onclick="window.poShaurmeApp.closeCheckoutModal()"
             class="w-8 h-8 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] text-zinc-400 hover:text-white flex items-center justify-center transition cursor-pointer"
           >
@@ -771,20 +713,18 @@
           </button>
         </div>
 
-        <!-- Order Summary Preview -->
         <div id="checkoutSummary" class="mb-5">
-          <!-- Injected via JavaScript -->
+
         </div>
 
-        <!-- Form -->
         <form onsubmit="window.poShaurmeApp.handleOrderSubmit(event, 'whatsapp')" class="space-y-4">
-          
+
           <div>
             <label class="block text-xs font-semibold text-zinc-300 mb-1.5">Ваше имя</label>
-            <input 
-              type="text" 
-              id="orderName" 
-              placeholder="Как к вам обращаться?" 
+            <input
+              type="text"
+              id="orderName"
+              placeholder="Как к вам обращаться?"
               class="w-full px-4 py-3 rounded-xl bg-[#0B0C10] border border-white/10 text-white placeholder-zinc-500 text-xs sm:text-sm outline-none focus:border-orange-500 transition"
             />
           </div>
@@ -793,16 +733,15 @@
             <label class="block text-xs font-semibold text-zinc-300 mb-1.5">
               Номер телефона <span class="text-red-400">*</span>
             </label>
-            <input 
-              type="tel" 
-              id="orderPhone" 
+            <input
+              type="tel"
+              id="orderPhone"
               required
-              placeholder="+7 (___) ___-__-__" 
+              placeholder="+7 (___) ___-__-__"
               class="w-full px-4 py-3 rounded-xl bg-[#0B0C10] border border-white/10 text-white placeholder-zinc-500 text-xs sm:text-sm outline-none focus:border-orange-500 transition font-mono"
             />
           </div>
 
-          <!-- Order Type: Takeaway vs On-site -->
           <div>
             <label class="block text-xs font-semibold text-zinc-300 mb-1.5">Формат заказа</label>
             <div class="grid grid-cols-2 gap-2.5">
@@ -819,7 +758,7 @@
 
           <div>
             <label class="block text-xs font-semibold text-zinc-300 mb-1.5">Время готовности</label>
-            <select 
+            <select
               id="orderTime"
               class="w-full px-4 py-3 rounded-xl bg-[#0B0C10] border border-white/10 text-white text-xs sm:text-sm outline-none focus:border-orange-500 transition cursor-pointer"
             >
@@ -832,25 +771,24 @@
 
           <div>
             <label class="block text-xs font-semibold text-zinc-300 mb-1.5">Пожелания к заказу</label>
-            <textarea 
-              id="orderComment" 
+            <textarea
+              id="orderComment"
               rows="2"
               placeholder="Например: без лука, больше соуса дзадзыки, салфетки..."
               class="w-full px-4 py-2.5 rounded-xl bg-[#0B0C10] border border-white/10 text-white placeholder-zinc-500 text-xs sm:text-sm outline-none focus:border-orange-500 transition resize-none"
             ></textarea>
           </div>
 
-          <!-- Submit Buttons -->
           <div class="pt-3 flex flex-col sm:flex-row gap-2.5">
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               class="btn-fire-shimmer flex-1 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition active:scale-95 cursor-pointer"
             >
               <i data-lucide="message-circle" class="w-4 h-4"></i>
               <span>Отправить в WhatsApp</span>
             </button>
-            <button 
-              type="button" 
+            <button
+              type="button"
               onclick="window.poShaurmeApp.handleOrderSubmit(event, 'telegram')"
               class="py-4 px-5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition active:scale-95 cursor-pointer"
             >
@@ -865,21 +803,20 @@
     </div>
   </div>
 
-  <!-- ================= SUCCESS MODAL (HIDDEN BY DEFAULT) ================= -->
-  <div 
-    id="successModal" 
+  <div
+    id="successModal"
     class="fixed inset-0 z-50 hidden overflow-y-auto"
-    role="dialog" 
+    role="dialog"
     aria-modal="true"
   >
-    <div 
-      onclick="window.poShaurmeApp.closeSuccessModal()" 
+    <div
+      onclick="window.poShaurmeApp.closeSuccessModal()"
       class="fixed inset-0 bg-black/85 backdrop-blur-md transition-opacity"
     ></div>
 
     <div class="flex min-h-full items-center justify-center p-4">
       <div class="relative w-full max-w-md rounded-3xl bg-[#14161D] border border-orange-500/40 p-7 sm:p-8 text-center shadow-2xl z-10">
-        
+
         <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-4 shadow-inner">
           <i data-lucide="check" class="w-8 h-8"></i>
         </div>
@@ -892,10 +829,10 @@
         </p>
 
         <div id="successModalDetails" class="mb-6">
-          <!-- Injected via JS -->
+
         </div>
 
-        <button 
+        <button
           onclick="window.poShaurmeApp.closeSuccessModal()"
           class="w-full py-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold text-xs uppercase tracking-wider shadow-fire-glow transition active:scale-95 cursor-pointer"
         >
@@ -906,15 +843,14 @@
     </div>
   </div>
 
-  <!-- ================= MOBILE MENU DRAWER (HIDDEN BY DEFAULT) ================= -->
-  <div 
-    id="mobileMenuDrawer" 
+  <div
+    id="mobileMenuDrawer"
     class="fixed inset-0 z-50 hidden"
-    role="dialog" 
+    role="dialog"
     aria-modal="true"
   >
-    <div 
-      onclick="window.poShaurmeApp.closeMobileMenu()" 
+    <div
+      onclick="window.poShaurmeApp.closeMobileMenu()"
       class="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity"
     ></div>
 
@@ -927,7 +863,7 @@
             </div>
             <span class="font-display font-black text-sm text-white uppercase">ПО ШАУРМЕ</span>
           </div>
-          <button 
+          <button
             onclick="window.poShaurmeApp.closeMobileMenu()"
             class="text-zinc-400 hover:text-white"
           >
@@ -936,33 +872,33 @@
         </div>
 
         <nav class="space-y-4 text-sm font-bold uppercase tracking-wider text-zinc-300">
-          <a 
-            href="#menu" 
-            onclick="window.poShaurmeApp.closeMobileMenu()" 
+          <a
+            href="#menu"
+            onclick="window.poShaurmeApp.closeMobileMenu()"
             class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/[0.05] hover:text-orange-400 transition"
           >
             <i data-lucide="utensils" class="w-4 h-4 text-orange-400"></i>
             <span>Меню</span>
           </a>
-          <a 
-            href="#about" 
-            onclick="window.poShaurmeApp.closeMobileMenu()" 
+          <a
+            href="#about"
+            onclick="window.poShaurmeApp.closeMobileMenu()"
             class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/[0.05] hover:text-orange-400 transition"
           >
             <i data-lucide="shield-check" class="w-4 h-4 text-orange-400"></i>
             <span>О заведении</span>
           </a>
-          <a 
-            href="#reviews" 
-            onclick="window.poShaurmeApp.closeMobileMenu()" 
+          <a
+            href="#reviews"
+            onclick="window.poShaurmeApp.closeMobileMenu()"
             class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/[0.05] hover:text-orange-400 transition"
           >
             <i data-lucide="message-square" class="w-4 h-4 text-orange-400"></i>
             <span>Отзывы (5.0 ★)</span>
           </a>
-          <a 
-            href="#contacts" 
-            onclick="window.poShaurmeApp.closeMobileMenu()" 
+          <a
+            href="#contacts"
+            onclick="window.poShaurmeApp.closeMobileMenu()"
             class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/[0.05] hover:text-orange-400 transition"
           >
             <i data-lucide="map-pin" class="w-4 h-4 text-orange-400"></i>
@@ -976,8 +912,8 @@
           📍 Сочи, ул. Чайковского, 5<br/>
           ⏰ Ежедневно 10:00 – 22:00
         </div>
-        <a 
-          href="tel:+79388771277" 
+        <a
+          href="tel:+79388771277"
           class="w-full py-3 rounded-xl bg-white/[0.05] text-white font-bold text-xs flex items-center justify-center gap-2 border border-white/10"
         >
           <i data-lucide="phone" class="w-3.5 h-3.5 text-orange-400"></i>
@@ -987,13 +923,11 @@
     </div>
   </div>
 
-  <!-- Toast Container -->
-  <div 
-    id="toastContainer" 
+  <div
+    id="toastContainer"
     class="fixed bottom-20 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col gap-2 pointer-events-none"
   ></div>
 
-  <!-- Application Scripts -->
   <script src="data.js"></script>
   <script src="app.js"></script>
 </body>

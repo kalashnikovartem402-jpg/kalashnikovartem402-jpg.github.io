@@ -1,7 +1,3 @@
-/**
- * ПО ШАУРМЕ • Крафтовый стритфуд в Сочи (ул. Чайковского, 5)
- * Меню и контакты
- */
 window.RESTAURANT_DATA = {
   restaurant: {
     name: "По Шаурме",
@@ -42,7 +38,7 @@ window.RESTAURANT_DATA = {
   ],
 
   products: [
-    // 1. Популярные хиты
+
     {
       id: "shaurma-classic",
       category: "popular",
@@ -114,7 +110,6 @@ window.RESTAURANT_DATA = {
       description: "Полукилограммовый шедевр: сочная курочка, обжаренные на гриле шампиньоны с дымком, сыр, свежие овощи и авторский соус."
     },
 
-    // 2. Шаурма & Пита
     {
       id: "shaurma-big-xl",
       category: "shaurma",
@@ -256,7 +251,6 @@ window.RESTAURANT_DATA = {
       description: "Длинная сочная сосиска гриль, хрустящий сушеный лук, маринованные огурчики, сладкая горчица и кетчуп в пышной булочке."
     },
 
-    // 3. Сытные комбо
     {
       id: "combo-shaurma-fries-cola",
       category: "combos",
@@ -300,7 +294,6 @@ window.RESTAURANT_DATA = {
       description: "Большая порция золотистого картофеля фри с солью и баночка освежающей газировки."
     },
 
-    // 4. Снеки & Боксы
     {
       id: "shaurma-box",
       category: "snacks",
@@ -372,7 +365,6 @@ window.RESTAURANT_DATA = {
       description: "9 аппетитных хрустящих наггетсов из белого куриного мяса."
     },
 
-    // 5. Фирменные соусы
     {
       id: "sauce-cheese",
       category: "sauces",

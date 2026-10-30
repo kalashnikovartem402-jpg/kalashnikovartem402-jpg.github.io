@@ -1,16 +1,9 @@
-/**
- * ПО ШАУРМЕ • Крафтовый стритфуд в Сочи (ул. Чайковского, 5)
- * Official Client Application & Cart Engine
- */
-
 (function () {
   'use strict';
 
-  // State
   let currentCategory = 'all';
-  let cart = []; // [{ id, name, price, weight, quantity, image }]
+  let cart = [];
 
-  // DOM Elements cache
   let dishesGrid;
   let categoryTabsContainer;
   let cartDrawer;
@@ -21,11 +14,8 @@
   let successModal;
   let mobileMenuDrawer;
 
-  /**
-   * Initialize Application
-   */
   document.addEventListener('DOMContentLoaded', () => {
-    // Cache DOM
+
     dishesGrid = document.getElementById('dishesGrid');
     categoryTabsContainer = document.getElementById('categoryTabs');
     cartDrawer = document.getElementById('cartDrawer');
@@ -36,21 +26,17 @@
     successModal = document.getElementById('successModal');
     mobileMenuDrawer = document.getElementById('mobileMenuDrawer');
 
-    // Load saved cart
     loadCart();
 
-    // Render initial views
     renderCategories();
     renderDishes();
     renderReviews();
     updateCartUI();
 
-    // Init Lucide Icons
     if (window.lucide) {
       lucide.createIcons();
     }
 
-    // Escape key listener for modals
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeCartDrawer();
@@ -61,9 +47,6 @@
     });
   });
 
-  /**
-   * Render Category Filter Tabs
-   */
   function renderCategories() {
     if (!categoryTabsContainer || !window.RESTAURANT_DATA?.categories) return;
 
@@ -75,7 +58,7 @@
         : 'bg-white/[0.04] text-zinc-300 hover:text-white border-white/10 hover:border-orange-500/40 hover:bg-white/[0.08]';
 
       return `
-        <button 
+        <button
           onclick="window.poShaurmeApp.switchCategory('${cat.id}')"
           class="category-tab-btn px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm whitespace-nowrap transition-all duration-300 border backdrop-blur-xl flex items-center gap-1.5 sm:gap-2 cursor-pointer flex-shrink-0 ${activeClass}"
           data-category="${cat.id}"
@@ -89,18 +72,12 @@
     if (window.lucide) lucide.createIcons();
   }
 
-  /**
-   * Switch Category Filter
-   */
   function switchCategory(catId) {
     currentCategory = catId;
     renderCategories();
     renderDishes();
   }
 
-  /**
-   * Render Dishes Bento Grid
-   */
   function renderDishes() {
     if (!dishesGrid || !window.RESTAURANT_DATA?.products) return;
 
@@ -113,7 +90,6 @@
       const inCart = cart.find(item => item.id === dish.id);
       const qty = inCart ? inCart.quantity : 0;
 
-      // Badge styling
       let badgeHtml = '';
       if (dish.badge) {
         let badgeColorClass = 'bg-orange-500/20 text-orange-400 border-orange-500/30';
@@ -128,11 +104,10 @@
         `;
       }
 
-      // Action button: Add to Cart OR Quantity Controller (- qty +)
       let actionMarkup = '';
       if (qty === 0) {
         actionMarkup = `
-          <button 
+          <button
             onclick="window.poShaurmeApp.addToCart('${dish.id}')"
             class="w-full py-2 sm:py-3 px-2 sm:px-4 rounded-xl sm:rounded-2xl bg-gradient-to-r from-orange-500 via-amber-500 to-red-500 hover:from-orange-400 hover:to-red-400 text-white font-extrabold text-[11px] sm:text-sm tracking-wide shadow-[0_4px_15px_rgba(249,115,22,0.3)] hover:shadow-[0_8px_25px_rgba(249,115,22,0.5)] transition-all duration-300 active:scale-95 flex items-center justify-center gap-1.5 cursor-pointer"
           >
@@ -143,7 +118,7 @@
       } else {
         actionMarkup = `
           <div class="w-full py-1 px-1.5 sm:py-1.5 sm:px-2 rounded-xl sm:rounded-2xl bg-[#0B0C10] border border-orange-500/50 flex items-center justify-between shadow-inner">
-            <button 
+            <button
               onclick="window.poShaurmeApp.updateCartQuantity('${dish.id}', -1)"
               class="w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-white/[0.08] hover:bg-orange-500 hover:text-white text-zinc-300 font-bold flex items-center justify-center transition-all active:scale-90 cursor-pointer"
               aria-label="Уменьшить"
@@ -154,7 +129,7 @@
               <span class="text-xs sm:text-sm font-black text-amber-400 font-display">${qty} шт</span>
               <span class="text-[9px] sm:text-[10px] text-zinc-400">${(dish.price * qty).toLocaleString('ru-RU')} ₽</span>
             </div>
-            <button 
+            <button
               onclick="window.poShaurmeApp.updateCartQuantity('${dish.id}', 1)"
               class="w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold flex items-center justify-center hover:opacity-90 transition-all active:scale-90 cursor-pointer shadow-md"
               aria-label="Увеличить"
@@ -168,18 +143,18 @@
       return `
         <article class="group relative rounded-2xl sm:rounded-3xl bg-[#14161D] border border-white/10 hover:border-orange-500/40 backdrop-blur-xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,0,0,0.8),0_0_25px_rgba(249,115,22,0.15)] flex flex-col justify-between">
           <div>
-            <!-- Image with Vignette & Badges -->
+            
             <div class="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden bg-black/60">
-              <img 
-                src="${dish.image}" 
-                alt="${dish.name}" 
+              <img
+                src="${dish.image}"
+                alt="${dish.name}"
                 loading="lazy"
                 class="w-full h-full object-cover group-hover:scale-106 transition-transform duration-500 ease-out filter brightness-95 group-hover:brightness-105"
                 onerror="this.src='img/dishes/shaurma_classic.jpg'"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-[#14161D] via-transparent to-black/40"></div>
 
-              <!-- Top Floating Badges -->
+              
               <div class="absolute top-2 inset-x-2 sm:top-3 sm:inset-x-3 flex items-start justify-between gap-1 pointer-events-none">
                 <div>${badgeHtml}</div>
                 <div class="px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded-md sm:rounded-full text-[9px] sm:text-[11px] font-bold bg-black/80 text-zinc-300 border border-white/15 backdrop-blur-md flex-shrink-0">
@@ -188,7 +163,7 @@
               </div>
             </div>
 
-            <!-- Content Area -->
+            
             <div class="p-2.5 sm:p-5">
               <h3 class="font-display font-black text-xs sm:text-base lg:text-lg text-white group-hover:text-amber-400 transition-colors uppercase tracking-tight leading-tight line-clamp-2 min-h-[2rem] sm:min-h-0 mb-1 sm:mb-2">
                 ${dish.name}
@@ -199,7 +174,7 @@
             </div>
           </div>
 
-          <!-- Bottom Price & Action Footer -->
+          
           <div class="px-2.5 pb-2.5 sm:px-5 sm:pb-5 pt-1.5 border-t border-white/5 flex flex-col gap-2">
             <div class="flex items-baseline justify-between gap-1">
               <div class="flex items-baseline gap-1.5">
@@ -221,9 +196,6 @@
     if (window.lucide) lucide.createIcons();
   }
 
-  /**
-   * Render Reviews from Real Data
-   */
   function renderReviews() {
     const reviewsGrid = document.getElementById('reviewsGrid');
     if (!reviewsGrid || !window.RESTAURANT_DATA?.reviews) return;
@@ -232,12 +204,12 @@
     reviewsGrid.innerHTML = reviews.map(rev => `
       <div class="rounded-3xl bg-[#14161D] border border-white/10 hover:border-orange-500/30 backdrop-blur-xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
         <div>
-          <!-- Header with Avatar and Rating -->
+          
           <div class="flex items-center justify-between gap-3 mb-4">
             <div class="flex items-center gap-3">
-              <img 
-                src="${rev.avatar}" 
-                alt="${rev.author}" 
+              <img
+                src="${rev.avatar}"
+                alt="${rev.author}"
                 class="w-11 h-11 rounded-full object-cover border border-orange-500/30 bg-black/50"
                 onerror="this.src='https://avatars.mds.yandex.net/get-yapic/64336/0f-8/islands-150'"
               />
@@ -249,13 +221,13 @@
                 </div>
               </div>
             </div>
-            <!-- 5 Gold Stars -->
+            
             <div class="flex items-center text-amber-400">
               ${Array(rev.rating).fill('<i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>').join('')}
             </div>
           </div>
 
-          <!-- Review Quote -->
+          
           <p class="text-zinc-300 text-xs sm:text-sm leading-relaxed italic font-light">
             "${rev.text}"
           </p>
@@ -271,9 +243,6 @@
     if (window.lucide) lucide.createIcons();
   }
 
-  /**
-   * Cart Management Functions
-   */
   function addToCart(productId) {
     const product = window.RESTAURANT_DATA.products.find(p => p.id === productId);
     if (!product) return;
@@ -345,14 +314,10 @@
     }
   }
 
-  /**
-   * Update Cart UI in Header, Bottom Bar & Drawer
-   */
   function updateCartUI() {
     const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
     const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
-    // Update badges
     if (cartBadges) {
       cartBadges.forEach(badge => {
         badge.textContent = totalCount;
@@ -364,18 +329,15 @@
       });
     }
 
-    // Update bottom bar subtotal
     const bottomBarTotal = document.getElementById('bottomBarTotal');
     if (bottomBarTotal) {
       bottomBarTotal.textContent = `${subtotal.toLocaleString('ru-RU')} ₽`;
     }
 
-    // Update Drawer Subtotal
     if (cartDrawerSubtotal) {
       cartDrawerSubtotal.textContent = `${subtotal.toLocaleString('ru-RU')} ₽`;
     }
 
-    // Update Drawer Item List
     if (cartDrawerItems) {
       if (cart.length === 0) {
         cartDrawerItems.innerHTML = `
@@ -385,7 +347,7 @@
             </div>
             <h4 class="font-display font-bold text-white text-lg mb-1">Корзина пуста</h4>
             <p class="text-xs text-zinc-400 max-w-xs mb-6">Добавьте сочную крафтовую шаурму на огне из нашего меню</p>
-            <button 
+            <button
               onclick="window.poShaurmeApp.closeCartDrawer(); window.location.href='#menu';"
               class="px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold text-xs uppercase tracking-wider shadow-lg hover:shadow-orange-500/30 transition active:scale-95 cursor-pointer"
             >
@@ -396,9 +358,9 @@
       } else {
         cartDrawerItems.innerHTML = cart.map(item => `
           <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/5 flex items-center justify-between gap-3 hover:border-orange-500/30 transition">
-            <img 
-              src="${item.image}" 
-              alt="${item.name}" 
+            <img
+              src="${item.image}"
+              alt="${item.name}"
               class="w-16 h-16 rounded-xl object-cover bg-black/50 border border-white/10 flex-shrink-0"
               onerror="this.src='img/dishes/shaurma_classic.jpg'"
             />
@@ -409,16 +371,16 @@
                 <span>•</span>
                 <span class="text-amber-400 font-bold">${item.price} ₽</span>
               </div>
-              <!-- Quantity Controls -->
+              
               <div class="flex items-center gap-2">
-                <button 
+                <button
                   onclick="window.poShaurmeApp.updateCartQuantity('${item.id}', -1)"
                   class="w-7 h-7 rounded-lg bg-white/[0.08] hover:bg-orange-500 hover:text-white text-zinc-300 flex items-center justify-center transition active:scale-90 cursor-pointer"
                 >
                   <i data-lucide="minus" class="w-3.5 h-3.5"></i>
                 </button>
                 <span class="text-xs font-black text-white px-2">${item.quantity}</span>
-                <button 
+                <button
                   onclick="window.poShaurmeApp.updateCartQuantity('${item.id}', 1)"
                   class="w-7 h-7 rounded-lg bg-orange-500 text-white flex items-center justify-center transition active:scale-90 cursor-pointer"
                 >
@@ -426,9 +388,9 @@
                 </button>
               </div>
             </div>
-            <!-- Item Total & Delete -->
+            
             <div class="flex flex-col items-end justify-between self-stretch">
-              <button 
+              <button
                 onclick="window.poShaurmeApp.removeFromCart('${item.id}')"
                 class="text-zinc-500 hover:text-red-400 p-1 transition cursor-pointer"
                 title="Удалить"
@@ -447,9 +409,6 @@
     if (window.lucide) lucide.createIcons();
   }
 
-  /**
-   * Modals & Drawers Control
-   */
   function openCartDrawer() {
     if (!cartDrawer) return;
     cartDrawer.classList.remove('hidden');
@@ -473,7 +432,6 @@
     checkoutModal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
 
-    // Populate order summary preview
     const checkoutSummary = document.getElementById('checkoutSummary');
     const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     if (checkoutSummary) {
@@ -551,9 +509,6 @@
     document.body.style.overflow = '';
   }
 
-  /**
-   * Submit Order
-   */
   function handleOrderSubmit(e, platform = 'whatsapp') {
     if (e && e.preventDefault) e.preventDefault();
 
@@ -582,7 +537,6 @@
 
     const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
-    // Build structured message for WhatsApp / Telegram
     let msg = `🔥 *ПРЕДЗАКАЗ — «ПО ШАУРМЕ» (Сочи, Чайковского, 5)*\n\n`;
     msg += `📋 *СОСТАВ ЗАКАЗА:*\n`;
     cart.forEach((item, idx) => {
@@ -598,7 +552,6 @@
     }
     msg += `\n📍 *Адрес заведения:* г. Сочи, ул. Чайковского, 5`;
 
-    // Copy to clipboard for maximum guest convenience
     try {
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(msg);
@@ -615,10 +568,8 @@
       url = `https://t.me/+${rawPhone}?text=${encodeURIComponent(msg)}`;
     }
 
-    // Open Messenger
     window.open(url, '_blank');
 
-    // Close checkout and show Success Modal
     closeCheckoutModal();
     openSuccessModal({
       name,
@@ -630,13 +581,9 @@
 
     showToast('📋 Заказ сформирован и передан!', 'check');
 
-    // Clear cart
     clearCart();
   }
 
-  /**
-   * Toast notification
-   */
   function showToast(text, icon = 'check') {
     const toastContainer = document.getElementById('toastContainer');
     if (!toastContainer) return;
@@ -653,7 +600,6 @@
     toastContainer.appendChild(toast);
     if (window.lucide) lucide.createIcons();
 
-    // Trigger animation
     requestAnimationFrame(() => {
       toast.classList.remove('translate-y-4', 'opacity-0');
       toast.classList.add('translate-y-0', 'opacity-100');
@@ -666,7 +612,6 @@
     }, 3200);
   }
 
-  // Expose to window for inline onclicks
   window.poShaurmeApp = {
     switchCategory,
     addToCart,
